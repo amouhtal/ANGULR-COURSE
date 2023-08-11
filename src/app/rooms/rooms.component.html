@@ -1,8 +1,34 @@
-<h1>Welcome to {{hotelName}}</h1>
+<h1>Welcome to {{ hotelName }}</h1>
 
 <div [hidden]="hideRooms">
-    Number of Rooms:
-    <div [innerText]="numberOfRooms"></div>
+  Number of Rooms:
+  <div [ngStyle]="{'color': rooms?.availableRooms ? 'green' : 'red'}" [innerText]="numberOfRooms"></div>
 </div>
 
+{{ rooms?.availableRooms ?? "No Rooms Available" }}
+
+<div *ngIf="rooms !== undefined && rooms.availableRooms > 0">
+  Rooms List
+  <table>
+    <tr>
+      <th>even/odd</th>
+      <th>Room Number</th>
+      <th>Room Type</th>
+      <th>Room Price</th>
+      <th>Room Amenities</th>
+      <th>Checkin Time</th>
+    </tr>
+    <tr
+      *ngFor="let room of roomList; let e = even; let o = odd"
+      [ngClass]="e ? 'even' : 'odd'"
+    >
+      <td>{{ e ? "even" : "odd" }}</td>
+      <td>{{ room.roomNumber }}</td>
+      <td>{{ room.roomType }}</td>
+      <td>{{ room.price }}</td>
+      <td>{{ room.amenities }}</td>
+      <td>{{ room.checkInTime }}</td>
+    </tr>
+  </table>
+</div>
 <button (click)="toggle()">Toggle</button>
