@@ -12,7 +12,7 @@ import { RoomsComponent } from './rooms/rooms.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
