@@ -26,6 +26,7 @@ export class RoomsComponent implements OnInit {
       photo: 'assets/images/standard.jpg',
       checkInTime: new Date('2021-01-01'),
       checkOutTime: new Date('2021-01-02'),
+      rating: 3.123456789,
     },
     {
       roomNumber: 102,
@@ -35,6 +36,7 @@ export class RoomsComponent implements OnInit {
       photo: 'assets/images/deluxe.jpg',
       checkInTime: new Date('2021-01-01'),
       checkOutTime: new Date('2021-01-02'),
+      rating: 3.9,
     },
     {
       roomNumber: 103,
@@ -44,6 +46,7 @@ export class RoomsComponent implements OnInit {
       photo: 'assets/images/suite.jpg',
       checkInTime: new Date('2021-01-01'),
       checkOutTime: new Date('2021-01-02'),
+      rating: 4.8,
     },
   ];
 
