@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Room, RoomList } from './rooms';
 
 @Component({
@@ -76,6 +76,6 @@ export class RoomsComponent implements OnInit {
       checkOutTime: new Date('15-Nov-2021'),
       rating: 4.5
     }
-    this.roomList.push(room)
+    this.roomList = [...this.roomList, room]
   }
 }
