@@ -1,6 +1,9 @@
-<h1>Welcome to {{ hotelName }}</h1>
+<!-- <h1>Welcome to {{ hotelName }}</h1> -->
+<app-header></app-header>
+<app-header></app-header>
+<app-header></app-header>
 
-<div [hidden]="hideRooms">
+<div *ngIf="hideRooms">
   Number of Rooms:
   <div
     [ngStyle]="{ color: rooms?.availableRooms ? 'green' : 'red' }"
@@ -15,7 +18,7 @@
 <div>
   <button (click)="addRoom()">Add Room</button>
 </div>
-<div  *ngIf="rooms !== undefined && rooms.availableRooms > 0">
+<div   *ngIf="hideRooms && rooms !== undefined && rooms.availableRooms > 0">
   <app-rooms-list 
   [roomList]="roomList"
   [title]="'Room List'"

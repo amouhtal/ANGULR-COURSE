@@ -1,4 +1,17 @@
-<div [ngSwitch]="role">
+<app-rooms></app-rooms>
+<app-container>
+  <h1>This is from ng-content</h1>
+  <app-rooms></app-rooms>
+  <app-employee></app-employee>
+
+</app-container>
+<div #name></div>
+<!-- <div>
+    <ng-template #user>
+
+    </ng-template>
+</div> -->
+<!-- <div [ngSwitch]="role">
     <div *ngSwitchCase="'user'">
         Welcome user!
     </div>
@@ -8,6 +21,5 @@
     <div *ngSwitchDefault>
         you are not logged in
     </div>
-</div>
- <router-outlet></router-outlet>
-
+</div> -->
+<router-outlet></router-outlet>
