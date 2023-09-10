@@ -29,4 +29,7 @@ export class AppComponent implements OnInit {
   //   const componentRef = this.vcr.createComponent(RoomsComponent);
   //   componentRef.instance.numberOfRooms = 144;
   // }
+  run(){
+    
+  }
 }
