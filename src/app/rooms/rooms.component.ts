@@ -49,6 +49,14 @@ export class RoomsComponent
       return of([])
     })
   );
+  
+  // rooms2$ = this.roomsService.getRooms$.pipe(
+  //   catchError((err) => {
+  //     console.log(err);
+  //     this.error$.next(err.message)
+  //     return of([])
+  //   })
+  // );
   @ViewChild(HeaderComponent, { static: true })
   headerComponent!: HeaderComponent;
   @ViewChildren(HeaderComponent)
