@@ -1,11 +1,11 @@
 <!-- <app-rooms></app-rooms> -->
-<app-container>
+<!-- <app-container>
   <h1>This is from ng-content</h1>
   <app-rooms></app-rooms>
   <app-employee></app-employee>
 
 </app-container>
-<div #name></div>
+<div #name></div> -->
 <!-- <div>
     <ng-template #user>
 
@@ -22,4 +22,7 @@
         you are not logged in
     </div>
 </div> -->
+<a [routerLink]="'rooms'">Rooms</a>
+<a [routerLink]="'employee'">Employee</a>
+
 <router-outlet></router-outlet>
