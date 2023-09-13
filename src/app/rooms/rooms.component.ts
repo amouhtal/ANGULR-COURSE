@@ -99,9 +99,22 @@ export class RoomsComponent
     //     console.log('error')
     //   }
     // });
-    // this.subscription = this.roomsService.getRooms$.subscribe((rooms) => {
-    //   this.roomList = rooms;
-    // });
+    this.subscription = this.roomsService.getRooms$.subscribe(
+      {
+        next: (data) => {
+          this.roomList = data;
+        },
+        error: (err) => {
+          console.log(err);
+        }
+        ,
+        complete: () => {
+          console.log('complete');
+        }
+      }
+     
+      
+    );
     this.roomsService.getPhotos().subscribe((event) => {
       switch (event.type) {
         case HttpEventType.Sent: {
