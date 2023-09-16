@@ -1,0 +1,25 @@
+<form #loginForm="ngForm">
+  <div class="form-group">
+    <input
+      type="email"
+      class="form-control"
+      name="email"
+      placeholder="Email"
+      [(ngModel)]="email"
+    />
+  </div>
+  <div class="form-group">
+    <input
+      type="password"
+      class="form-control"
+      name="password"
+      placeholder="Password"
+      [(ngModel)]="password"
+    />
+  </div>
+  <div class="form-group">
+    <button class="btn btn-primary" type="submit" (click)="login(loginForm)">
+      Login
+    </button>
+  </div>
+</form>
