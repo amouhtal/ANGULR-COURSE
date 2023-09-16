@@ -17,7 +17,10 @@ export class LoginComponent implements OnInit {
   login(loginForm: any){
     if(this.email === 'admin' && this.password === 'admin'){
       alert('Login successful');
-      loginForm.resetForm();
+      loginForm.resetForm({
+        email: '',
+        password: '',
+      });
     }
   }
 }

@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.name.nativeElement.innerHTML = 'Hello World';  
+    // this.name.nativeElement.innerHTML = 'Hello World';  
     this.localStorage.setItem('name', 'John');
   }
   // ngAfterViewInit(): void {
