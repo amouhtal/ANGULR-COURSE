@@ -1,8 +1,8 @@
-import { AfterViewInit, Component, ElementRef, Inject, OnInit, Optional, ViewChild, ViewContainerRef } from '@angular/core';
-import { RoomsComponent } from './rooms/rooms.component';
+import { Component, ElementRef, Inject, OnInit, Optional, ViewChild } from '@angular/core';
 import { LocalStorageToken } from './localstorage.token';
 import { LoggerService } from './logger.service';
 import { InitService } from './init.service';
+import { ConfigService } from './services/config.service';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +19,8 @@ export class AppComponent implements OnInit {
   
   constructor(@Optional() private loggerService: LoggerService,
   @Inject(LocalStorageToken) private localStorage: Storage,
-  private initService: InitService
+  private initService: InitService,
+  private configService: ConfigService
   ) {
     console.log('InitService', initService.config);
   }

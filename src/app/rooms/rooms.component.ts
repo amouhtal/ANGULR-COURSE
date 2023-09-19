@@ -14,6 +14,7 @@ import { HeaderComponent } from '../header/header.component';
 import { RoomsService } from './services/rooms.service';
 import { Observable, Subject, Subscription, catchError, observable, of } from 'rxjs';
 import { HttpEventType } from '@angular/common/http';
+import { ConfigService } from '../services/config.service';
 
 @Component({
   selector: 'app-rooms',
@@ -73,7 +74,8 @@ export class RoomsComponent
     }, 6000);
   });
 
-  constructor(private roomsService: RoomsService) {}
+  constructor(private roomsService: RoomsService, private configService: ConfigService,
+    ) {}
 
   ngDoCheck(): void {
     console.log('ngDoCheck called');
