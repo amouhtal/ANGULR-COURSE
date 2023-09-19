@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
     if (this.loginService.login(this.email, this.password)) {
       // this.router.navigateByUrl('/rooms/add');
       // this.router.navigate(['/rooms', 'add']);
-      this.router.navigate(['/rooms', 'add']);
+      this.router.navigate(['/rooms']);
       loginForm.resetForm({
         email: '',
         password: '',
