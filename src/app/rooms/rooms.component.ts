@@ -15,6 +15,7 @@ import { RoomsService } from './services/rooms.service';
 import { Observable, Subject, Subscription, catchError, observable, of } from 'rxjs';
 import { HttpEventType } from '@angular/common/http';
 import { ConfigService } from '../services/config.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-rooms',
@@ -75,7 +76,7 @@ export class RoomsComponent
   });
 
   constructor(private roomsService: RoomsService, private configService: ConfigService,
-    ) {}
+   private router: Router ) {}
 
   ngDoCheck(): void {
     console.log('ngDoCheck called');
@@ -147,19 +148,20 @@ export class RoomsComponent
   }
 
   addRoom() {
-    const room: RoomList = {
-      roomNumber: '4',
-      roomType: 'Delux Room',
-      amenities: ['Air Conditioner, free wifi, tv'],
-      price: 500,
-      photo: 'assets/images/suite.jpg',
-      checkInTime: new Date('11-Nov-2021'),
-      checkOutTime: new Date('15-Nov-2021'),
-      rating: 4.5,
-    };
-    this.roomsService.addRoom(room).subscribe((data) => {
-      this.roomList = data;
-    });
+    this.router.navigate(['rooms', 'add']);
+    // const room: RoomList = {
+    //   roomNumber: '4',
+    //   roomType: 'Delux Room',
+    //   amenities: ['Air Conditioner, free wifi, tv'],
+    //   price: 500,
+    //   photo: 'assets/images/suite.jpg',
+    //   checkInTime: new Date('11-Nov-2021'),
+    //   checkOutTime: new Date('15-Nov-2021'),
+    //   rating: 4.5,
+    // };
+    // this.roomsService.addRoom(room).subscribe((data) => {
+    //   this.roomList = data;
+    // });
   }
 
   editRoom() {
