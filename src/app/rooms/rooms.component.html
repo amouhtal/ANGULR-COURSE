@@ -1,18 +1,21 @@
 <!-- <h1>Welcome to {{ hotelName }}</h1> -->
-<app-header></app-header>
+<!-- <app-header></app-header> -->
 <!-- <app-header></app-header>
 <app-header></app-header> -->
-<div *ngIf="hideRooms">
+<!-- <div *ngIf="hideRooms">
   Number of Rooms:
   <div
     [ngStyle]="{ color: rooms?.availableRooms ? 'green' : 'red' }"
     [innerText]="numberOfRooms"
   ></div>
-</div>
+</div> -->
 
 <!-- {{ rooms?.availableRooms ?? "No Rooms Available" }} -->
-<div *ngIf="selectedRoom">
+<!-- <div *ngIf="selectedRoom">
   {{selectedRoom | json}}
+</div> -->
+<div>
+  <button class="btn btn-success" routerLink="add">add Room</button>
 </div>
 <div>
   <button (click)="addRoom()">Add Room</button>
@@ -26,11 +29,11 @@
   ></app-rooms-list>
 </div>
 
-<button (click)="toggle()">Toggle</button>
+<!-- <button (click)="toggle()">Toggle</button>
 <button (click)="editRoom()">Edit Room</button>
 <button (click)="deleteRoom()">Delte Room</button>
 
 <h1>
   loaded {{ totalBytes }}
-</h1>
+</h1> -->
 <router-outlet></router-outlet>
