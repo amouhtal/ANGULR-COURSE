@@ -97,6 +97,7 @@
       [for]="picker2"
     ></mat-datepicker-toggle>
     <mat-datepicker #picker2></mat-datepicker>
+    {{bookingForm.get('checkOutDate')?.errors | json}}}
   </mat-form-field>
   <mat-form-field class="example-full-width">
     <mat-label>Booking Date</mat-label>

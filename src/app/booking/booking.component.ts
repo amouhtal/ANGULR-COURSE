@@ -60,7 +60,8 @@ export class BookingComponent implements OnInit {
       }),
       guests: this.fb.array([this.addGuestControl()]),
       tnc: new FormControl(false, Validators.requiredTrue),
-    });
+    }, {updateOn: 'blur', validators: 
+    [CustomeValidator.validateDate]});
     this.getBookingData();
 
     // this.bookingForm.valueChanges.subscribe((changes) => {
