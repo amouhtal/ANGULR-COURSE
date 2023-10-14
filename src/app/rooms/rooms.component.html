@@ -26,9 +26,13 @@
   [roomList]="rooms"
   [title]="'Room List'"
   (selectedRoom)="selectRoom($event)"
+  [price]="priceFilter.value"
   ></app-rooms-list>
 </div>
-
+{{priceFilter | json}}
+<div>
+   <input [formControl]="priceFilter" type="number" class="form-control" placeholder="Price" >
+</div>  
 <!-- <button (click)="toggle()">Toggle</button>
 <button (click)="editRoom()">Edit Room</button>
 <button (click)="deleteRoom()">Delte Room</button>

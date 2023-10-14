@@ -16,6 +16,7 @@ import { Observable, Subject, Subscription, catchError, observable, of } from 'r
 import { HttpEventType } from '@angular/common/http';
 import { ConfigService } from '../services/config.service';
 import { Router } from '@angular/router';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-rooms',
@@ -52,6 +53,8 @@ export class RoomsComponent
     })
   );
   
+  priceFilter = new FormControl(0);
+
   // rooms2$ = this.roomsService.getRooms$.pipe(
   //   catchError((err) => {
   //     console.log(err);

@@ -18,11 +18,12 @@ const routes: Routes = [
   }, 
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   {
-    path: 'booking',
+    path: 'booking/:roomID',
     loadChildren: () =>
       import('./booking/booking.module').then((m) => m.BookingModule),
-    // , canActivate: [LoginGuard]
+  //  canActivate: [LoginGuard]
   },
+  { path: 'commens', loadChildren: () => import('./comment/comment.module').then(m => m.CommentModule) },
   { path: '**', component: NotfoundComponent },
 ];
 
